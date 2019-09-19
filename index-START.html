@@ -145,6 +145,14 @@
       const panels = document.querySelectorAll(".panel");
 
       function toggleOpen() {
+        console.log(Array.from(this.classList).includes("open"));
+
+        panels.forEach(panel => {
+          if (panel != this && Array.from(panel.classList).includes("open")) {
+            panel.classList.toggle("open");
+          }
+        });
+
         this.classList.toggle("open");
       }
 
